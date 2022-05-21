@@ -24,7 +24,7 @@ class MealDetailScreen extends StatelessWidget {
       ),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
-      height: 250,
+      height: 150,
       width: 300,
       child: child,
     );
@@ -77,9 +77,7 @@ class MealDetailScreen extends StatelessWidget {
                         selectedMeal.steps[index],
                       ),
                     ),
-                    Divider(
-                      color: Colors.red,
-                    )
+                    Divider()
                   ],
                 ),
                 itemCount: selectedMeal.steps.length,
@@ -87,6 +85,14 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.delete,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
       ),
     );
   }
